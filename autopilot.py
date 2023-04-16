@@ -36,6 +36,7 @@ class Autopilot:
         logger.Log.success(f"Testing name : {logger.get_colored_text(tests_name, logger.bcolors.UNDERLINE)}")
         logger.Log.success(f"Protocol : {logger.get_colored_text(tests['protocol'], logger.bcolors.UNDERLINE)}")
         logger.Log.error(f"Running {len(tests['tests'])} tests...")
+        variables = tests['vars']
         for i,test in enumerate(tests['tests']):
             logger.Log.warning(f"Running testcase{i+1} : {test['test_name']}")
             actions = test['actions']
@@ -46,7 +47,7 @@ class Autopilot:
                     amount = action['amount']
                 logger.Log.warning(f"...~=> Running Action{action_index+1} : {action['action_name']} * {amount}")
                 for i in range(amount):
-                    actions_map[action_type](self.driver,action['value'])
+                    actions_map[action_type](self.driver,variables[action['value']])
                     if ('timeout' in action):
                         if (action['timeout'] == -1):
                             input("Press enter to continue...")

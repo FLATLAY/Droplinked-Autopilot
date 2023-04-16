@@ -11,7 +11,7 @@ def change_url(driver,url):
         driver.get(url)
         logger.Log.success(f"Changed Url to {get_colored_text(url, logger.bcolors.BOLD)}")
     except:
-        logger.Log.error(f"Couldn't change Url to {get_colored_text(url, logger.bcolors.BOLD)}, timedout")
+        logger.Log.error(f"Couldn't change Url to {get_colored_text(url, logger.bcolors.BOLD)}, timedout.")
 
 def click(driver : WebDriver, xpath):
     try:

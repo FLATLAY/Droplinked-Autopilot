@@ -2,6 +2,16 @@
     "protocol" : "droplinked_tests_v1",
     "name" : "random tests for testing the selenium",
     "run_tests" : ["Add multiple Products to cart"],
+    "vars" : {
+        "casper_shop_url" : "https://casper.droplinked.com/",
+        "profile_button" : "/html/body/div[1]/div[1]/header/div[2]/div[2]",
+        "login_button" : "/html/body/div[1]/div[1]/header/div[2]/div[3]/div/div/button[2]",
+        "p1_url" : "https://casper.droplinked.com/product/642aa5367bf52be588207978",
+        "add_to_cart_button" : "/html/body/div[1]/div[1]/div[2]/div/div/div/div[1]/div[2]/div/button",
+        "cart_url" : "https://casper.droplinked.com/cart",
+        "p2_url" : "https://casper.droplinked.com/product/642aa6ca7bf52be588207a37",
+        "logout_button" : "/html/body/div[1]/div[1]/header/div[2]/div[3]/div/div[3]"
+    },
     "tests" : [
         {
             "test_name" : "LoginWallet",
@@ -9,18 +19,18 @@
                 {
                     "action_name" : "LoadSite",
                     "action_type" : "ChangeUrl",
-                    "value" : "https://casper.droplinked.com/"
+                    "value" : "casper_shop_url"
                 },
                 {
                     "action_name" : "ClickProfile",
                     "action_type" : "Click",
-                    "value" : "/html/body/div[1]/div[1]/header/div[2]/div[2]",
+                    "value" : "profile_button",
                     "timeout" : 2
                 },
                 {
                     "action_name" : "ClickLogin",
                     "action_type" : "Click",
-                    "value" : "/html/body/div[1]/div[1]/header/div[2]/div[3]/div/div/button[2]",
+                    "value" : "login_button",
                     "timeout" : -1
                 }
             ]
@@ -31,20 +41,20 @@
                 {
                     "action_name" : "GotoProduct",
                     "action_type" : "ChangeUrl",
-                    "value" : "https://casper.droplinked.com/product/642aa5367bf52be588207978",
+                    "value" : "p1_url",
                     "timeout" : 4
                 },
                 {
                     "action_name" : "Add to cart", 
                     "action_type" : "Click", 
-                    "value" : "/html/body/div[1]/div[1]/div[2]/div/div/div/div[1]/div[2]/div/button",
+                    "value" : "add_to_cart_button",
                     "amount" : 3,
                     "timeout" : 4
                 },
                 {
                     "action_name" : "Go to cart",
                     "action_type" : "ChangeUrl",
-                    "value" : "https://casper.droplinked.com/cart",
+                    "value" : "cart_url",
                     "timeout" : 4
                 }
             ]
@@ -55,34 +65,34 @@
             {
                 "action_name" : "GotoProduct1",
                 "action_type" : "ChangeUrl",
-                "value" : "https://casper.droplinked.com/product/642aa5367bf52be588207978",
-                "timeout" : 4
+                "value" : "p1_url",
+                "timeout" : -1
             },
             {
-                "action_name" : "Add P1 to cart 3 times", 
+                "action_name" : "Add P1 to cart", 
                 "action_type" : "Click", 
-                "value" : "/html/body/div[1]/div[1]/div[2]/div/div/div/div[1]/div[2]/div/button",
+                "value" : "add_to_cart_button",
                 "amount" : 3,
                 "timeout" : 4
             },
             {
                 "action_name" : "GotoProduct2",
                 "action_type" : "ChangeUrl",
-                "value" : "https://casper.droplinked.com/product/642aa6ca7bf52be588207a37",
-                "timeout" : 4
+                "value" : "p2_url",
+                "timeout" : -1
             },
             {
-                "action_name" : "Add P2 to cart 2 times", 
+                "action_name" : "Add P2 to cart", 
                 "action_type" : "Click", 
-                "value" : "/html/body/div[1]/div[1]/div[2]/div/div/div/div[1]/div[2]/div/button",
+                "value" : "add_to_cart_button",
                 "amount" : 2,
                 "timeout" : 4
             },
             {
                 "action_name" : "Go to cart",
                 "action_type" : "ChangeUrl",
-                "value" : "https://casper.droplinked.com/cart",
-                "timeout" : 4
+                "value" : "cart_url",
+                "timeout" : -1
             },
             {
                 "action_name" : "Check cart items",
@@ -101,17 +111,17 @@
                 {
                     "action_name" : "LoadSite",
                     "action_type" : "ChangeUrl",
-                    "value" : "https://casper.droplinked.com/"
+                    "value" : "casper_shop_url"
                 },
                 {
                     "action_name" : "ClickProfile",
                     "action_type" : "Click",
-                    "value" : "/html/body/div[1]/div[1]/header/div[2]/div[2]"
+                    "value" : "profile_button"
                 },
                 {
                     "action_name" : "ClickLogout",
                     "action_type" : "Click",
-                    "value" : "/html/body/div[1]/div[1]/header/div[2]/div[3]/div/div[3]"
+                    "value" : "logout_button"
                 }
             ]
         }
