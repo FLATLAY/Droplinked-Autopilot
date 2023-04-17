@@ -69,15 +69,19 @@ def menu_handler():
     print("1. Add test")
     print("2. Save test")
     print("3. Exit")
+    print("4. Show tests")
     inp = input(" > ")
     while (inp != "3"):
         if (inp == "1"):
             add_test()
         elif (inp == "2"):
             save_test()
+        elif (inp == "4"):
+            print(json.dumps(test_handler.tests_obj,indent=4))
         print("1. Add test")
         print("2. Save test")
         print("3. Exit")
+        print("4. Show tests")
         inp = input(" > ")
 
 def main():

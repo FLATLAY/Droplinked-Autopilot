@@ -10,7 +10,10 @@
         "add_to_cart_button" : "/html/body/div[1]/div[1]/div[2]/div/div/div/div[1]/div[2]/div/button",
         "cart_url" : "https://casper.droplinked.com/cart",
         "p2_url" : "https://casper.droplinked.com/product/642aa6ca7bf52be588207a37",
-        "logout_button" : "/html/body/div[1]/div[1]/header/div[2]/div[3]/div/div[3]"
+        "logout_button" : "/html/body/div[1]/div[1]/header/div[2]/div[3]/div/div[3]",
+        "cart_check_var_1" : {
+            "total_price" : "6.00"
+        }
     },
     "tests" : [
         {
@@ -97,10 +100,7 @@
             {
                 "action_name" : "Check cart items",
                 "action_type" : "CheckCart",
-                "value" : {
-                    "total_price" : "2.00",
-                    "total_items" : 5
-                },
+                "value" : "cart_check_var_1",
                 "timeout" : 4
             }
           ]  
