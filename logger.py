@@ -25,3 +25,5 @@ class Log:
         print(get_colored_text("[*] ", bcolors.BOLD)+get_colored_text(get_time_formated(), bcolors().OKCYAN) + " -> " + get_colored_text(msg, bcolors().WARNING))
     def success(msg):
         print(get_colored_text("[*] ", bcolors.BOLD)+get_colored_text(get_time_formated(), bcolors().OKCYAN) + " -> " + get_colored_text(msg, bcolors().OKGREEN))
+    
+    

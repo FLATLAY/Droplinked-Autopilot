@@ -46,7 +46,7 @@ class Autopilot:
                 if ("amount" in action):
                     amount = action['amount']
                 logger.Log.warning(f"...~=> Running Action{action_index+1} : {action['action_name']} * {amount}")
-                for i in range(amount):
+                for ii in range(amount):
                     actions_map[action_type](self.driver,variables[action['value']])
                     if ('timeout' in action):
                         if (action['timeout'] == -1):
